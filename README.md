@@ -1,20 +1,30 @@
 # Képfeldolgozás beadandó – 2025
 
-**Téma:** Dokumentum szkennelés képfeldolgozása és szövegfelismerése (OCR)
+### Téma
+Kézzel írott papírlap digitalizálása: dokumentum detektálás, torzítás javítása, binarizálás, majd OCR felismerés (EasyOCR + Tesseract).
 
-**Hallgató:** Velekey Ádám  
-**Neptun kód:** H3Q42Y  
-**Tantárgy:** GKLB_INTM152 – Képfeldolgozás  
-**Fejlesztői környezet:** Google Colab + Python + OpenCV  
-**Állapot:** Inicializálás – projekt előkészítés alatt (2025.10.12.)
+### Hallgató
+- **Név:** Velekey Ádám  
+- **Neptun:** H3Q42Y  
+- **Tárgy:** GKLB_INTM152 – Képfeldolgozás  
+- **Fejlesztési környezet:** Google Colab + Python + OpenCV  
+- **Státusz:** 1. konzultáció – működő prototípus kész (2025.10)  
 
 ---
 
-## Feladat rövid leírása
-A beadandó célja egy lefotózott papíralapú dokumentum automatikus feldolgozása:
-- papírlap detektálása a képben
-- perspektíva korrekció és képjavítás (binarizálás, zajszűrés)
-- szöveg kiolvasása OCR segítségével
-- eredmények megjelenítése
+## 🧠 Projekt célja
 
-A projekt folyamatosan bővül, a kód és dokumentáció a következő hetekben kerül feltöltésre.
+Egy lefotózott papírlap automatikus feldolgozása:
+
+1. Papírlap detektálása képen (szegélykeresés)
+2. Perspektíva korrekció (kiegyenesítés)
+3. Zajszűrés + kontrasztjavítás + binarizálás
+4. Szövegfelismerés
+   - EasyOCR
+   - Tesseract OCR
+5. Pontosság mérése referencia szöveg alapján
+6. Eredmények mentése
+
+---
+
+## 📂 Mappa szerkezet
