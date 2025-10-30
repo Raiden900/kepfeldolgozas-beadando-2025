@@ -27,6 +27,53 @@ Egy lefotózott papírlap automatikus feldolgozása:
 
 ---
 
+## ⭐ Használt technológiák
+
+- Python 3.x
+- Google Colab
+- OpenCV
+- EasyOCR
+- Tesseract OCR
+- NumPy
+- Matplotlib (vizualizáció)
+
+
+---
+
+## 💡 Alkalmazott képfeldolgozási módszerek
+
+- Dokumentum kontúr detektálása (Canny + contour keresés)
+- Perspektívakorrekció (warpPerspective)
+- Grayscale konverzió
+- Gauss szűrés (zajszűréshez)
+- Kontraszt kiemelés
+- Otsu binarizáció + morfológiai tisztítás
+
+---
+
+## 🎯 OCR módszertan
+
+Kétféle OCR eljárás összehasonlítása:
+
+1) EasyOCR (beamsearch és low_text_threshold paraméterekkel)
+2) Tesseract OCR (PSM 4 + OEM 1)
+
+Mindkét módszer:
+- nyers képen
+- előfeldolgozott képen (binarizálás után)
+
+Így mérve → előfeldolgozás hatása az OCR pontosságára.
+
+---
+
+##📊 Pontosságmérés
+
+A felismert szöveg összehasonlítása a referencia szöveggel
+→ difflib.SequenceMatcher (szöveg-hasonlóság %)
+
+---
+
+
 ## 📂 Mappa szerkezet
 
 ```plaintext
