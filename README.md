@@ -1,3 +1,17 @@
+asdasd
+asd
+asd
+asda
+sasd
+sa
+
+sadasdsa
+ASDASDAS
+ASDASD
+asdas
+asdad
+asd
+
 # Képfeldolgozás beadandó – 2025
 
 ### Téma
@@ -30,10 +44,6 @@ Egy lefotózott papírlap automatikus feldolgozása:
 ## 📂 Mappa szerkezet
 
 ---
-
-
-
-
 
 
 
