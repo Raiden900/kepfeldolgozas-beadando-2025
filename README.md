@@ -25,11 +25,11 @@ Egy lefotózott papírlap automatikus feldolgozása:
 5. Pontosság mérése referencia szöveg alapján
 6. Eredmények mentése
 
----
+
 
 ## 📂 Mappa szerkezet
 
----
+
 
 
 project-root/
@@ -43,70 +43,3 @@ project-root/
 ├── Kepfeldolgozas_beadando.ipynb   # fő Colab notebook
 └── README.md         # projekt összefoglaló
 
-
----
-
-## 🧠 Projekt célja
-
-Egy lefotózott papírlap automatikus feldolgozása:
-
-1. Papírlap detektálása képen (szegélykeresés)
-2. Perspektíva korrekció (kiegyenesítés)
-3. Zajszűrés + kontrasztjavítás + binarizálás
-4. Szövegfelismerés
-   - EasyOCRx
-   - Tesseract OCR
-5. Pontosság mérése referencia szöveg alapján
-6. Eredmények mentése
-
----
-wer
-werew
-ewr
-ewrew
-r
-ewr
-ewr
-ewr
----
-___
-___
-ew
-rew
-rew
-
-ewr
-ewr
-ew
-rew
-rew
-rew
-
-r
-ewr
-
-
-## 📂 Mappa szerkezet
-werwe
-wer
-wer
-werewr
-ewrwe
-rewrwe
-rwer
-
-ewewr
-
-## 📂 Mappa szerkezet
-
-
-project-root/
-├── data/
-│   ├── input/        # teszt képek (lefényképezett papírlapok)
-│   └── output/       # OCR eredmények + feldolgozott képek
-│
-├── docs/             # végleges beadandó dokumentáció (később)
-├── src/              # opcionális moduláris Python kód (később)
-│
-├── Kepfeldolgozas_beadando.ipynb   # fő Colab notebook
-└── README.md         # projekt összefoglaló
