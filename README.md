@@ -32,7 +32,7 @@ Egy lefotózott papírlap automatikus feldolgozása:
 ```plaintext
 project-root/
 ├── data/
-│   ├── input/        # teszt képek (lefényképezett papírlapok)
+│   ├── input/        # teszt képek (lefényképezett papírlap)
 │   └── output/       # OCR eredmények + feldolgozott képek
 │
 ├── docs/             # végleges beadandó dokumentáció (később)
