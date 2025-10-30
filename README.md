@@ -20,7 +20,7 @@ Egy lefotózott papírlap automatikus feldolgozása:
 2. Perspektíva korrekció (kiegyenesítés)
 3. Zajszűrés + kontrasztjavítás + binarizálás
 4. Szövegfelismerés
-   - EasyOCR
+   - EasyOCRx
    - Tesseract OCR
 5. Pontosság mérése referencia szöveg alapján
 6. Eredmények mentése
@@ -28,3 +28,11 @@ Egy lefotózott papírlap automatikus feldolgozása:
 ---
 
 ## 📂 Mappa szerkezet
+/data
+ ├─ /input      – teszt képek (lefényképezett papírlapok)
+ └─ /output     – OCR eredmények, feldolgozott képek
+
+/docs           – végleges beadandó dokumentáció (később kerül feltöltésre)
+/src            – opcionális moduláris Python fájlok (később)
+/Kepfeldolgozas_beadando.ipynb – a fő Colab notebook
+README.md       – projekt összefoglaló
