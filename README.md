@@ -27,7 +27,40 @@ Egy lefotózott papírlap automatikus feldolgozása:
 
 ---
 
+wer
+werew
+ewr
+ewrew
+r
+ewr
+ewr
+ewr
+ew
+rew
+rew
+r
+ewr
+ewr
+ew
+rew
+rew
+rew
+
+r
+ewr
+
+
 ## 📂 Mappa szerkezet
+werwe
+wer
+wer
+werewr
+ewrwe
+rewrwe
+rwer
+
+ewewr
+
 
 project-root/
 ├── data/
