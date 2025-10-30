@@ -29,8 +29,8 @@ Egy lefotózott papírlap automatikus feldolgozása:
 
 ## 📂 Mappa szerkezet
 /data
- ├─ /input        → teszt képek (lefényképezett papírlapok)
- └─ /output       → feldolgozott képek + OCR eredmények
+  ├─ /input        → teszt képek (lefényképezett papírlapok)
+  └─ /output       → feldolgozott képek + OCR eredmények
 
 /docs             → végleges beadandó dokumentáció (később)
 /src              → opcionális Python modulok (később)
