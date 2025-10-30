@@ -1,17 +1,3 @@
-asdasd
-asd
-asd
-asda
-sasd
-sa
-
-sadasdsa
-ASDASDAS
-ASDASD
-asdas
-asdad
-asd
-
 # Képfeldolgozás beadandó – 2025
 
 ### Téma
@@ -30,12 +16,12 @@ Kézzel írott papírlap digitalizálása: dokumentum detektálás, torzítás j
 
 Egy lefotózott papírlap automatikus feldolgozása:
 
-1. Papírlap detektálása képen (szegélykeresés)
+1. Papírlap detektálása a képen (szegélykeresés)
 2. Perspektíva korrekció (kiegyenesítés)
 3. Zajszűrés + kontrasztjavítás + binarizálás
-4. Szövegfelismerés
-   - EasyOCRx
-   - Tesseract OCR
+4. Szövegfelismerés  
+   - EasyOCR  
+   - Tesseract OCR  
 5. Pontosság mérése referencia szöveg alapján
 6. Eredmények mentése
 
@@ -43,10 +29,7 @@ Egy lefotózott papírlap automatikus feldolgozása:
 
 ## 📂 Mappa szerkezet
 
----
-
-
-
+```plaintext
 project-root/
 ├── data/
 │   ├── input/        # teszt képek (lefényképezett papírlapok)
@@ -56,5 +39,4 @@ project-root/
 ├── src/              # opcionális moduláris Python kód (később)
 │
 ├── Kepfeldolgozas_beadando.ipynb   # fő Colab notebook
-└── README.md         # projekt összefoglaló
-
+└── README.md                          # projekt összefoglaló
