@@ -29,10 +29,11 @@ Egy lefotózott papírlap automatikus feldolgozása:
 
 ## 📂 Mappa szerkezet
 /data
- ├─ /input      – teszt képek (lefényképezett papírlapok)
- └─ /output     – OCR eredmények, feldolgozott képek
+ ├─ /input        → teszt képek (lefényképezett papírlapok)
+ └─ /output       → feldolgozott képek + OCR eredmények
 
-/docs           – végleges beadandó dokumentáció (később kerül feltöltésre)
-/src            – opcionális moduláris Python fájlok (később)
-/Kepfeldolgozas_beadando.ipynb – a fő Colab notebook
-README.md       – projekt összefoglaló
+/docs             → végleges beadandó dokumentáció (később)
+/src              → opcionális Python modulok (később)
+
+Kepfeldolgozas_beadando.ipynb → fő Google Colab notebook
+README.md         → projekt összefoglaló
