@@ -25,9 +25,14 @@ Egy lefotózott papírlap automatikus feldolgozása:
 5. Pontosság mérése referencia szöveg alapján
 6. Eredmények mentése
 
-
+---
 
 ## 📂 Mappa szerkezet
+
+---
+
+
+
 
 
 
