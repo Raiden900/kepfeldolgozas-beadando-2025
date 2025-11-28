@@ -1,22 +1,44 @@
-!pip install -q opencv-python-headless easyocr pytesseract matplotlib numpy
+# Szükséges csomagok (EZT nem a kódba kell írni, hanem egyszer telepíteni:
+# pip install opencv-python-headless easyocr pytesseract matplotlib numpy
 
 import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
 import pytesseract, easyocr
-from google.colab import files
+import difflib
+import os, json
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
 
 def show(img, title=None, size=(6,6)):
     plt.figure(figsize=size)
-    if img.ndim==2: plt.imshow(img, cmap='gray')
-    else: plt.imshow(cv.cvtColor(img, cv.COLOR_BGR2RGB))
-    if title: plt.title(title)
-    plt.axis('off'); plt.show()
+    if img.ndim==2:
+        plt.imshow(img, cmap='gray')
+    else:
+        plt.imshow(cv.cvtColor(img, cv.COLOR_BGR2RGB))
+    if title:
+        plt.title(title)
+    plt.axis('off')
+    plt.show()
 
-# --- kép feltöltés ugyanúgy, mint eddig ---
-uploaded = files.upload()
-fname = list(uploaded.keys())[0]
-img = cv.imdecode(np.frombuffer(uploaded[fname], np.uint8), cv.IMREAD_COLOR)
+# --- KÉP BETÖLTÉSE PC-N / VS CODE-BAN ---
+
+Tk().withdraw()
+
+print("Válaszd ki a képet:")
+img_path = askopenfilename(
+    title="Kép kiválasztása",
+    filetypes=[("Képfájlok", "*.jpg *.jpeg *.png *.bmp *.tiff")]
+)
+
+if not img_path:
+    raise ValueError("Nem választottál ki képet!")
+
+img = cv.imread(img_path)
+
+if img is None:
+    raise FileNotFoundError(f"Nem sikerült betölteni a képet: {img_path}")
+
 show(img, "Eredeti fotó", (8,8))
 
 
@@ -57,7 +79,7 @@ def warp_document(image_bgr, target_width=1200):
     return warped, True
 
 raw, ok = warp_document(img)
-show(raw, "RAW (kivágva + kiegyenesítve)")
+show(raw, "RAW (kivágva + kiegyenesítve)", (8,8))
 
 
 def enhance_for_ocr(bgr):
@@ -102,11 +124,8 @@ print("\n=== EasyOCR PROC ===\n", txt_proc_ez)
 print("\n=== Tesseract RAW ===\n", txt_raw_te)
 print("\n=== Tesseract PROC ===\n", txt_proc_te)
 
-
-# --- ITT JÖN A VÁLTOZTATÁS: a várt szöveget a felhasználó írja be ---
-import difflib
-
-expected = input("\nÍrd be, milyen szöveget írtál a papírra (elvárt szöveg):\n")
+# --- Várt szöveg bekérése ---
+expected = input("\nÍrd be, milyen szöveget írtál a papírra (elvárt szöveg, ékezet nélkül):\n")
 
 def sim(a,b):
     return difflib.SequenceMatcher(None,a.upper().strip(),b.upper().strip()).ratio()
@@ -120,13 +139,12 @@ for name, txt in [("Easy RAW",txt_raw_ez),
                   ("Tess PROC",txt_proc_te)]:
     print(f"{name:10s} -> match={sim(expected, txt):.2f}")
 
-
-import os, json
-os.makedirs("/content/outputs", exist_ok=True)
-cv.imwrite("/content/outputs/raw.jpg", raw)
-cv.imwrite("/content/outputs/proc_bin.png", binimg)
-with open("/content/outputs/ocr.json","w",encoding="utf-8") as f:
+# --- Mentés outputs mappába (projekt gyökerében) ---
+os.makedirs("outputs", exist_ok=True)
+cv.imwrite("outputs/raw.jpg", raw)
+cv.imwrite("outputs/proc_bin.png", binimg)
+with open("outputs/ocr.json","w",encoding="utf-8") as f:
     json.dump({"easy_raw":txt_raw_ez,"easy_proc":txt_proc_ez,
                "tess_raw":txt_raw_te,"tess_proc":txt_proc_te},
               f, ensure_ascii=False, indent=2)
-print("\nMentve: /content/outputs")
+print("\nMentve: outputs/")
