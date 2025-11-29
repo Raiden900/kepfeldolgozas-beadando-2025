@@ -1,4 +1,4 @@
-# Szükséges csomagok (EZT nem a kódba kell írni, hanem egyszer telepíteni:
+# Szükséges csomagok egyszer kell telepíteni:
 # pip install opencv-python-headless easyocr pytesseract matplotlib numpy
 
 import cv2 as cv
@@ -21,7 +21,7 @@ def show(img, title=None, size=(6,6)):
     plt.axis('off')
     plt.show()
 
-# --- KÉP BETÖLTÉSE PC-N / VS CODE-BAN ---
+# --- KÉP BETÖLTÉSE PC-N ---
 
 Tk().withdraw()
 
@@ -34,7 +34,9 @@ img_path = askopenfilename(
 if not img_path:
     raise ValueError("Nem választottál ki képet!")
 
-img = cv.imread(img_path)
+# Unicode-barát betöltés, ékezetes útvonalakhoz is jó
+data = np.fromfile(img_path, dtype=np.uint8)
+img = cv.imdecode(data, cv.IMREAD_COLOR)
 
 if img is None:
     raise FileNotFoundError(f"Nem sikerült betölteni a képet: {img_path}")
@@ -148,3 +150,4 @@ with open("outputs/ocr.json","w",encoding="utf-8") as f:
                "tess_raw":txt_raw_te,"tess_proc":txt_proc_te},
               f, ensure_ascii=False, indent=2)
 print("\nMentve: outputs/")
+
