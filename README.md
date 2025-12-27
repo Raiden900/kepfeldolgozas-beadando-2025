@@ -66,7 +66,7 @@ Mindkét módszer:
 
 ---
 
-##📊 Pontosságmérés
+## 📊 Pontosságmérés
 
 A felismert szöveg összehasonlítása a referencia szöveggel
 → difflib.SequenceMatcher (szöveg-hasonlóság %)
