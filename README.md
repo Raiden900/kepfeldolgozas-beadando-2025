@@ -78,11 +78,13 @@ A felismert szöveg összehasonlítása a referencia szöveggel
 
 ```plaintext
 project-root/
+├── main.py       # a python file
+│
 ├── data/
 │   ├── input/        # teszt képek (lefényképezett papírlap)
 │   └── output/       # OCR eredmények + feldolgozott képek
 │
 ├── dokumentáció.pdf             # végleges beadandó dokumentáció
 │
-├── Kepfeldolgozas_beadando.ipynb   # fő Colab notebook
+├── Kepfeldolgozas_beadando.ipynb      #  Colab notebook
 └── README.md                          # projekt összefoglaló
