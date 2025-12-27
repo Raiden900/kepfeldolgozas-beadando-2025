@@ -82,7 +82,7 @@ project-root/
 │   ├── input/        # teszt képek (lefényképezett papírlap)
 │   └── output/       # OCR eredmények + feldolgozott képek
 │
-├── dokumentáció/             # végleges beadandó dokumentáció (később)
+├── dokumentáció.pdf             # végleges beadandó dokumentáció
 │
 ├── Kepfeldolgozas_beadando.ipynb   # fő Colab notebook
 └── README.md                          # projekt összefoglaló
